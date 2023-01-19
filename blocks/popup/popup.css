@@ -1,0 +1,20 @@
+.popup {
+  padding: 195px 0 0 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .6);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  display: none;
+}
+
+
+@media screen and (max-width: 560px) {
+  .popup {
+    padding-top: 123px;
+  }
+}

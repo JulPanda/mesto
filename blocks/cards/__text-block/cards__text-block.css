@@ -1,0 +1,10 @@
+.cards__text-block {
+  margin: 0;
+  padding: 25px 15px 31px 21px;
+  box-sizing: border-box;
+  max-width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
