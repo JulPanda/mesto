@@ -13,28 +13,27 @@
 @import url(../blocks/profile/__title/profile__title.css);
 @import url(../blocks/profile/__subtitle/profile__subtitle.css);
 @import url(../blocks/profile/__button-edit/profile__button-edit.css);
-@import url(../blocks/profile/__button-edit/_opener/profile__button-edit_opener.css);
 @import url(../blocks/profile/__button-add/profile__button-add.css);
 
 @import url(../blocks/cards/cards.css);
-@import url(../blocks/cards/__element/cards__element.css);
-@import url(../blocks/cards/__button-like/cards__button-like.css);
-@import url(../blocks/cards/__image/cards__image.css);
-@import url(../blocks/cards/__text-block/cards__text-block.css);
-@import url(../blocks/cards/__title/cards__title.css);
+
+
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/__button-like/element__button-like.css);
+@import url(../blocks/element/__image/element__image.css);
+@import url(../blocks/element/__text-block/element__text-block.css);
+@import url(../blocks/element/__title/element__title.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
-
-@import url(../blocks/popup-overlay/popup-overlay.css);
 
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__content/popup__content.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__button-close/popup__button-close.css);
 @import url(../blocks/popup/__button-save/popup__button-save.css);
-@import url(../blocks/popup/__input-name/popup__input-name.css);
-@import url(../blocks/popup/__input-about/popup__input-about.css);
+@import url(../blocks/popup/__input/_type_about/popup__input_type_about.css);
+@import url(../blocks/popup/__input/_type_name/popup__input_type_name.css);
+@import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__input/popup__input.css);
-@import url(../blocks/popup/__input-text/popup__input-text.css);
 @import url(../blocks/popup/_opened/popup_opened.css);

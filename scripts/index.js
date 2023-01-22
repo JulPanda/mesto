@@ -1,4 +1,4 @@
-const aboutOpenButton = document.querySelector('.profile__button-edit_opener');
+const aboutOpenButton = document.querySelector('.profile__button-edit');
 const aboutPopup = document.querySelector('.popup');
 const aboutCloseButton = document.querySelector('.popup__button-close');
 
@@ -6,10 +6,10 @@ const aboutProfileName = document.querySelector('.profile__title');
 const aboutProfileJob = document.querySelector('.profile__subtitle');
 
 // Находим форму в DOM
-let formElement = document.querySelector('.popup__input');
+let formElement = document.querySelector('.popup__form');
 // Находим поля формы в DOM
-let nameInput = document.querySelector('.popup__input-name');
-let jobInput = aboutPopup.querySelector('.popup__input-about');
+let nameInput = document.querySelector('.popup__input_type_name');
+let jobInput = aboutPopup.querySelector('.popup__input_type_about');
 
 function openPopup() {
   nameInput.value = aboutProfileName.textContent;
@@ -34,7 +34,7 @@ function handleFormSubmit(evt) {
   // Получите значение полей jobInput и nameInput из свойства value
   // Выберите элементы, куда должны быть вставлены значения полей
   // Вставьте новые значения с помощью textContent
-  closePopup();
+  closePopup(aboutPopup);
 }
 
 // Прикрепляем обработчик к форме:

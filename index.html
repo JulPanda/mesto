@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
-  <script src="./scripts/index.js" defer></script>
   <title>Место Россия</title>
 </head>
 
@@ -19,57 +18,57 @@
       <img class="profile__image" alt="Фото Жак-Ив Кусто" src="./images/image-profile.jpg">
       <div class="profile__info">
         <h1 class="profile__title">Жак-Ив Кусто</h1>
-        <button class="profile__button-edit profile__button-edit_opener" type="button">
-          <img alt="Кнопка Редактировать" src="./images/edit_button.svg">
+        <button class="profile__button-edit" type="button" aria-label="Кнопка Редактировать">
+          <!--  <img alt="Кнопка Редактировать" src="./images/edit_button.svg"> -->
         </button>
         <p class="profile__subtitle">Исследователь океана</p>
       </div>
-      <button class="profile__button-add" type="button">
-        <img alt="Кнопка Добавить" src="./images/add_button.svg">
+      <button class="profile__button-add" type="button" aria-label="Кнопка Добавить">
+        <!-- <img alt="Кнопка Добавить" src="./images/add_button.svg"> -->
       </button>
     </section>
     <section>
       <ul class="cards">
-        <li class="cards__element">
-          <img class="cards__image" src="./images/Karachaevsk.jpg" alt="Фотография Карачаевск">
-          <div class="cards__text-block">
-            <h2 class="cards__title">Карачаевск</h2>
-            <button class="cards__button-like" type="button"></button>
+        <li class="element">
+          <img class="element__image" src="./images/Karachaevsk.jpg" alt="Фотография Карачаевск">
+          <div class="element__text-block">
+            <h2 class="element__title">Карачаевск</h2>
+            <button class="element__button-like" type="button"></button>
           </div>
         </li>
-        <li class="cards__element">
-          <img class="cards__image" src="./images/Elbrus.jpg" alt="Фотография горы Эльбрус">
-          <div class="cards__text-block">
-            <h2 class="cards__title">Гора Эльбрус</h2>
-            <button class="cards__button-like" type="button"></button>
+        <li class="element">
+          <img class="element__image" src="./images/Elbrus.jpg" alt="Фотография горы Эльбрус">
+          <div class="element__text-block">
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <button class="element__button-like" type="button"></button>
           </div>
         </li>
-        <li class="cards__element">
-          <img class="cards__image" src="./images/Dombay.jpg" alt="Фотография Домбай">
-          <div class="cards__text-block">
-            <h2 class="cards__title">Домбай</h2>
-            <button class="cards__button-like" type="button"></button>
+        <li class="element">
+          <img class="element__image" src="./images/Dombay.jpg" alt="Фотография Домбай">
+          <div class="element__text-block">
+            <h2 class="element__title">Домбай</h2>
+            <button class="element__button-like" type="button"></button>
           </div>
         </li>
-        <li class="cards__element">
-          <img class="cards__image" src="./images/Baikal.jpg" alt="Фотография Байкала">
-          <div class="cards__text-block">
-            <h2 class="cards__title">Байкал</h2>
-            <button class="cards__button-like" type="button"></button>
+        <li class="element">
+          <img class="element__image" src="./images/Baikal.jpg" alt="Фотография Байкала">
+          <div class="element__text-block">
+            <h2 class="element__title">Байкал</h2>
+            <button class="element__button-like" type="button"></button>
           </div>
         </li>
-        <li class="cards__element">
-          <img class="cards__image" src="./images/kurshskaya_kosa.jpg" alt="Фотография места на Куршской косе">
-          <div class="cards__text-block">
-            <h2 class="cards__title">Куршская коса</h2>
-            <button class="cards__button-like" type="button"></button>
+        <li class="element">
+          <img class="element__image" src="./images/kurshskaya_kosa.jpg" alt="Фотография места на Куршской косе">
+          <div class="element__text-block">
+            <h2 class="element__title">Куршская коса</h2>
+            <button class="element__button-like" type="button"></button>
           </div>
         </li>
-        <li class="cards__element">
-          <img class="cards__image" src="./images/sankt_peterburg.jpg" alt="Фотография Санкт-Петербурга">
-          <div class="cards__text-block">
-            <h2 class="cards__title">Санкт-Петербург</h2>
-            <button class="cards__button-like" type="button"></button>
+        <li class="element">
+          <img class="element__image" src="./images/sankt_peterburg.jpg" alt="Фотография Санкт-Петербурга">
+          <div class="element__text-block">
+            <h2 class="element__title">Санкт-Петербург</h2>
+            <button class="element__button-like" type="button"></button>
           </div>
         </li>
       </ul>
@@ -78,17 +77,18 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
   </footer>
-  <div class="popup popup-overlay">
+  <div class="popup">
     <div class="popup__content">
       <h2 class="popup__title">Редактировать профиль</h2>
       <button class="popup__button-close" type="button"></button>
-      <form class="popup__input">
-        <input type="text" placeholder="Имя" class="popup__input-text popup__input-name">
-        <input type="text" placeholder="О себе" class="popup__input-text popup__input-about">
+      <form class="popup__form" name="Popupform">
+        <input type="text" placeholder="Имя" name="inputName" class="popup__input popup__input_type_name">
+        <input type="text" placeholder="О себе" name="inputAbout" class="popup__input popup__input_type_about">
         <button class="popup__button-save" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
+  <script src="./scripts/index.js"></script>
 </body>
 
 </html>
