@@ -6,6 +6,9 @@
   font-size: 18px;
   line-height: 1.22;
   align-self: flex-start;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 

@@ -21,10 +21,6 @@ function closePopup() {
   aboutPopup.classList.remove('popup_opened');
 }
 
-aboutOpenButton.addEventListener('click', openPopup);
-aboutCloseButton.addEventListener('click', closePopup);
-
-
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
 function handleFormSubmit(evt) {
@@ -36,6 +32,9 @@ function handleFormSubmit(evt) {
   // Вставьте новые значения с помощью textContent
   closePopup(aboutPopup);
 }
+
+aboutOpenButton.addEventListener('click', openPopup);
+aboutCloseButton.addEventListener('click', closePopup);
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
