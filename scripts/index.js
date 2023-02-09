@@ -165,9 +165,7 @@ aboutOpenButtonEdit.addEventListener('click', function () {
 
 // Вызов кнопки закрытия попапа карточки
 aboutCloseButtonCard.addEventListener('click', function () {
-  closePopup(aboutPopupCard);
-  imagelinkInput.value = '';
-  placeInput.value = '';
+  closePopup(aboutPopupCard); 
 });
 //Вызов кнопки открытия попапа редактирования карточки
 aboutOpenButtonCard.addEventListener('click', function () {
