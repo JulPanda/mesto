@@ -29,7 +29,7 @@
     </section>
     <section>
       <ul class="cards">
-        <li class="element">
+<!--        <li class="element">
           <img class="element__image" src="./images/Karachaevsk.jpg" alt="Фотография Карачаевск">
           <div class="element__text-block">
             <h2 class="element__title">Карачаевск</h2>
@@ -70,24 +70,52 @@
             <h2 class="element__title">Санкт-Петербург</h2>
             <button class="element__button-like" type="button"></button>
           </div>
-        </li>
+        </li> -->
       </ul>
     </section>
   </main>
   <footer class="footer">
     <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
   </footer>
-  <div class="popup">
+  <div class="popup popup_type_edit">
     <div class="popup__content">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <button class="popup__button-close" type="button"></button>
-      <form class="popup__form" name="Popupform">
+      <button class="popup__button-close popup__button-close_edit" type="button"></button>
+      <form class="popup__form" name="Popupform" id="form-name">
         <input type="text" placeholder="Имя" name="inputName" class="popup__input popup__input_type_name">
         <input type="text" placeholder="О себе" name="inputAbout" class="popup__input popup__input_type_about">
         <button class="popup__button-save" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
+   <div class="popup popup_type_new-card">
+    <div class="popup__content">
+      <h2 class="popup__title">Новое место</h2>
+      <button class="popup__button-close popup__button-close_card" type="button"></button>
+      <form class="popup__form" name="Popupform" id="form-card">
+        <input type="text" placeholder="Название" name="inputName" class="popup__input popup__input_type_place">
+        <input type="url" placeholder="Ссылка на картинку" name="inputLink" class="popup__input popup__input_type_link">
+        <button class="popup__button-save" type="submit">Создать</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup_type_image">
+    <div class="popup__content-image">      
+      <button class="popup__button-close popup__button-close_image" type="button"></button>
+      <img class="popup__image" src="" alt="">
+      <h3 class="popup__title-image"></h3>      
+    </div>
+  </div>
+  <template class="element-template">
+    <li class="element">
+      <img class="element__image" src="#" alt="">
+      <button class="element__button-delete" type="button" aria-label="Корзина"></button>
+      <div class="element__text-block">
+        <h2 class="element__title"></h2>
+        <button class="element__button-like" type="button" aria-label="Лайк"></button>
+      </div>
+    </li>
+  </template>
   <script src="./scripts/index.js"></script>
 </body>
 

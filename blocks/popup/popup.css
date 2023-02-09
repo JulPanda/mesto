@@ -8,5 +8,9 @@
   background-color: rgba(0, 0, 0, .6);
   justify-content: center;
   align-items: center;
-  display: none;
+  /* display: none; */
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility .5s, opacity .5s ease-in;
 }
