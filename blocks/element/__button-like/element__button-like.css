@@ -10,6 +10,6 @@
   border: none;
 }
 
-.element__button-like:hover { 
- opacity: 0.5;
+.element__button-like:hover {
+  opacity: 0.5;
 }

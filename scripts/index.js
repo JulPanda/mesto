@@ -76,7 +76,7 @@ function openPopup(popup) {
 }
 // Функция закрытия
 function closePopup(popup) {
-  popup.classList.remove('popup_opened');  
+  popup.classList.remove('popup_opened');
 }
 
 //Функция создания карточки
@@ -137,7 +137,7 @@ function handleCardFormSubmit(evt) {
     link: imagelinkInput.value
   });
   addCards(newCard);
-  closePopup(aboutPopupCard);  
+  closePopup(aboutPopupCard);
   evt.target.reset();
 }
 
@@ -165,7 +165,7 @@ aboutOpenButtonEdit.addEventListener('click', function () {
 
 // Вызов кнопки закрытия попапа карточки
 aboutCloseButtonCard.addEventListener('click', function () {
-  closePopup(aboutPopupCard); 
+  closePopup(aboutPopupCard);
 });
 //Вызов кнопки открытия попапа редактирования карточки
 aboutOpenButtonCard.addEventListener('click', function () {
