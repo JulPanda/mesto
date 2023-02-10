@@ -19,40 +19,12 @@ const cardTemplate = document.querySelector('.element-template')
   .content
   .querySelector('.element');
 
-// Массив карточек
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
 // Находим форму в DOM
 const formProfileElement = document.querySelector('#form-name');
 const formCardElement = document.querySelector('#form-card');
 // Находим поля формы в DOM
-let nameInput = formProfileElement.querySelector('.popup__input_type_name');
-let jobInput = formProfileElement.querySelector('.popup__input_type_about');
+const nameInput = formProfileElement.querySelector('.popup__input_type_name');
+const jobInput = formProfileElement.querySelector('.popup__input_type_about');
 const imagelinkInput = formCardElement.querySelector('.popup__input_type_link');
 const placeInput = formCardElement.querySelector('.popup__input_type_place');
 
@@ -90,7 +62,7 @@ function createCard({ name, link }) {
 
   cardTitle.textContent = name;
   cardImage.src = link;
-  cardImage.alt = 'Фотография ' + name;
+  cardImage.alt = `Фотография ${name}`;
 
   // Лайк
   aboutButtonLike.addEventListener('click', function () {
