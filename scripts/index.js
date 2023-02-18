@@ -1,13 +1,13 @@
 const aboutOpenButtonEdit = document.querySelector('.profile__button-edit');
 const aboutOpenButtonCard = document.querySelector('.profile__button-add');
-const aboutPopup = document.querySelector('.popup');
-const aboutCloseButtonEdit = document.querySelector('.popup__button-close_edit');
-const aboutCloseButtonCard = document.querySelector('.popup__button-close_card');
-const aboutCloseButtonImage = document.querySelector('.popup__button-close_image');
+const aboutCloseButtons = document.querySelectorAll('.popup__button-close');
 
 const aboutPopupEdit = document.querySelector('.popup_type_edit');
 const aboutPopupCard = document.querySelector('.popup_type_new-card');
 const aboutPopupImage = document.querySelector('.popup_type_image');
+
+const popupImageZoom = aboutPopupImage.querySelector('.popup__image');
+const popupTitleZoom = aboutPopupImage.querySelector('.popup__title-image');
 
 // Инпут-профиль
 const aboutProfileName = document.querySelector('.profile__title');
@@ -20,8 +20,9 @@ const cardTemplate = document.querySelector('.element-template')
   .querySelector('.element');
 
 // Находим форму в DOM
-const formProfileElement = document.querySelector('#form-name');
-const formCardElement = document.querySelector('#form-card');
+const formProfileElement = document.forms["form-name"];
+const formCardElement = document.forms["form-card"];
+
 // Находим поля формы в DOM
 const nameInput = formProfileElement.querySelector('.popup__input_type_name');
 const jobInput = formProfileElement.querySelector('.popup__input_type_about');
@@ -31,29 +32,31 @@ const placeInput = formCardElement.querySelector('.popup__input_type_place');
 // Открытие попапа профиля
 function openPopupEdit(popup) {
   nameInput.value = aboutProfileName.textContent;
-  jobInput.value = aboutProfileJob.textContent;  
-  openPopup(aboutPopupEdit);  
-  }
+  jobInput.value = aboutProfileJob.textContent;
+  openPopup(aboutPopupEdit);
+
+  resetFormValidation(formProfileElement, formValidation);
+}
 
 
 // Окрытие попапа карточки
 function openPopupCard(popup) {
-  openPopup(aboutPopupCard);  
+  openPopup(aboutPopupCard);
+
+  resetFormValidation(formCardElement, formValidation);
 }
 
 
 // Функция открытия
 function openPopup(popup) {
-  document.addEventListener('click', closePopupOverlay);
+  document.addEventListener('mousedown', closePopupOverlay);
   document.addEventListener('keyup', closePopupEsc);
   popup.classList.add('popup_opened');
-
-  resetFormValidation(formValidation);
 }
 
 // Функция закрытия
 function closePopup(popup) {
-  document.removeEventListener('click', closePopupOverlay);
+  document.removeEventListener('mousedown', closePopupOverlay);
   document.removeEventListener('keyup', closePopupEsc);
   popup.classList.remove('popup_opened');
 }
@@ -65,14 +68,12 @@ function closePopupEsc(evt) {
   }
 }
 
-
 //Фукция закрытия по оверлей
 function closePopupOverlay(evt) {
- if (evt.target.classList.contains('popup_opened')) {
-    closePopup(evt.target);    
+  if (evt.target.classList.contains('popup_opened')) {
+    closePopup(evt.target);
+  }
 }
-}
-
 
 //Функция создания карточки
 function createCard({ name, link }) {
@@ -99,9 +100,9 @@ function createCard({ name, link }) {
 
   // Вызов картинки
   cardImage.addEventListener('click', function () {
-    aboutPopupImage.querySelector('.popup__image').src = link;
-    aboutPopupImage.querySelector('.popup__image').alt = 'Фотография ' + name;
-    aboutPopupImage.querySelector('.popup__title-image').textContent = name;
+    popupImageZoom.src = link;
+    popupImageZoom.alt = 'Фотография ' + name;
+    popupTitleZoom.textContent = name;
     openPopup(aboutPopupImage);
   });
 
@@ -145,46 +146,26 @@ function handleProfileFormSubmit(evt) {
   // Получите значение полей jobInput и nameInput из свойства value
   // Выберите элементы, куда должны быть вставлены значения полей
   // Вставьте новые значения с помощью textContent
-  closePopup(aboutPopup);
+  closePopup(aboutPopupEdit);
 }
 
-
-// Вызов кнопки закрытия попапа профиля
-aboutCloseButtonEdit.addEventListener('click', function () {
-  closePopup(aboutPopupEdit);
+// Универсальный слушатель зактытия всех попапа
+aboutCloseButtons.forEach((button) => {
+  const popup = button.closest('.popup');
+  button.addEventListener('click', () =>
+    closePopup(popup));
 });
+
+
 //Вызов кнопки открытия попапа редактирования профиля
 aboutOpenButtonEdit.addEventListener('click', function () {
   openPopupEdit(aboutPopupEdit);
 });
 
-// Вызов кнопки закрытия попапа карточки
-aboutCloseButtonCard.addEventListener('click', function () {
-  closePopup(aboutPopupCard);
-});
 //Вызов кнопки открытия попапа редактирования карточки
 aboutOpenButtonCard.addEventListener('click', function () {
   openPopupCard(aboutPopupCard);
 });
-
-// Вызов кнопки закрытия попапа карточки
-aboutCloseButtonImage.addEventListener('click', function () {
-  closePopup(aboutPopupImage);
-});
-
-//Фукция закрытия по оверлей
-//function closePopupOverlay(evt) {
-// if (evt.target.classList.contains('.popup_opened')) {
-//    closePopup(evt.target);
-//  }
-//}
-
-//document.addEventListener('click', function (evt) {
-//if (evt.target.classList.contains('.popup_opened')) {
-// closePopup(evt.target);
-//}
-
-//});
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»

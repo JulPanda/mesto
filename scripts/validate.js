@@ -24,9 +24,15 @@ function enableValidation(config) {
     });
     addInputListeners(form, config);
     toggleButton(form, config);
+
+    form.addEventListener('reset', () => {
+      setTimeout(() => {
+        toggleButton(form, config);
+      }, 0);
+    });
+
   });
 }
-
 
 //Проверка на валиднось вводных двнных пользователем
 function handleFormInput(evt, config) {
@@ -36,13 +42,10 @@ function handleFormInput(evt, config) {
 
   if (input.validity.valid) {
     input.classList.remove(config.inputErrorClass);
-    //errorItem.classList.remove(config.errorClass);
     errorItem.textContent = '';
   } else {
     input.classList.add(config.inputErrorClass);
-    //errorItem.classList.add(config.errorClass);
     errorItem.textContent = input.validationMessage;
-
   }
 }
 
@@ -51,8 +54,7 @@ function toggleButton(form, config) {
   const isFormValid = form.checkValidity();
 
   buttonSubmit.disabled = !isFormValid;
-  buttonSubmit.classList.toggle('popup__button-save_disabled', !isFormValid);
-
+  buttonSubmit.classList.toggle(config.inactiveButtonClass, !isFormValid);
 }
 
 function addInputListeners(form, config) {
@@ -65,24 +67,19 @@ function addInputListeners(form, config) {
   });
 }
 
-function resetFormValidation(config) {
-  const forms = Array.from(document.querySelectorAll(config.formSelector));
+function resetFormValidation(form, config) {
+  const inputs = Array.from(form.querySelectorAll(config.inputSelector));
 
-    forms.forEach((form) => {
-    const inputs = Array.from(form.querySelectorAll(config.inputSelector));
-    inputs.forEach((input) => {
-      const inputId = input.id;
-      const errorItem = document.querySelector(`#${inputId}-error`);
-      console.log(input);
-      console.log(errorItem);
-      errorItem.textContent = '';
-      input.classList.remove(config.inputErrorClass);
-    });
-
-    toggleButton(form, config)
+  inputs.forEach((input) => {
+    const inputId = input.id;
+    const errorItem = document.querySelector(`#${inputId}-error`);
+    console.log(input);
+    console.log(errorItem);
+    errorItem.textContent = '';
+    input.classList.remove(config.inputErrorClass);
   });
 
+  toggleButton(form, config);
 }
-
 
 enableValidation(formValidation);
