@@ -31,25 +31,48 @@ const placeInput = formCardElement.querySelector('.popup__input_type_place');
 // Открытие попапа профиля
 function openPopupEdit(popup) {
   nameInput.value = aboutProfileName.textContent;
-  jobInput.value = aboutProfileJob.textContent;
-  openPopup(aboutPopupEdit);
-}
+  jobInput.value = aboutProfileJob.textContent;  
+  openPopup(aboutPopupEdit);  
+  }
 
 
 // Окрытие попапа карточки
 function openPopupCard(popup) {
-  openPopup(aboutPopupCard);
+  openPopup(aboutPopupCard);  
 }
 
 
 // Функция открытия
 function openPopup(popup) {
+  document.addEventListener('click', closePopupOverlay);
+  document.addEventListener('keyup', closePopupEsc);
   popup.classList.add('popup_opened');
+
+  resetFormValidation(formValidation);
 }
+
 // Функция закрытия
 function closePopup(popup) {
+  document.removeEventListener('click', closePopupOverlay);
+  document.removeEventListener('keyup', closePopupEsc);
   popup.classList.remove('popup_opened');
 }
+
+// Функция закрытия по клавише Esc
+function closePopupEsc(evt) {
+  if (evt.key === "Escape") {
+    closePopup(document.querySelector('.popup_opened'));
+  }
+}
+
+
+//Фукция закрытия по оверлей
+function closePopupOverlay(evt) {
+ if (evt.target.classList.contains('popup_opened')) {
+    closePopup(evt.target);    
+}
+}
+
 
 //Функция создания карточки
 function createCard({ name, link }) {
@@ -148,6 +171,20 @@ aboutOpenButtonCard.addEventListener('click', function () {
 aboutCloseButtonImage.addEventListener('click', function () {
   closePopup(aboutPopupImage);
 });
+
+//Фукция закрытия по оверлей
+//function closePopupOverlay(evt) {
+// if (evt.target.classList.contains('.popup_opened')) {
+//    closePopup(evt.target);
+//  }
+//}
+
+//document.addEventListener('click', function (evt) {
+//if (evt.target.classList.contains('.popup_opened')) {
+// closePopup(evt.target);
+//}
+
+//});
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
