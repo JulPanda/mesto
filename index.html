@@ -42,59 +42,33 @@
       <button class="popup__button-close popup__button-close_edit" type="button"></button>
 
       <form class="popup__form" name="Popupform" id="form-name" novalidate>
-        <input 
-         id="input-name"
-         type="text" 
-         placeholder="Имя"
-         name="inputName"
-         class="popup__input popup__input_type_name"
-         minlength="2"
-         maxlength="40"
-         required>
-         <span id="input-name-error" class="popup__error">          
-         </span>
+        <input id="input-name" type="text" placeholder="Имя" name="inputName"
+          class="popup__input popup__input_type_name" minlength="2" maxlength="40" required>
+        <span id="input-name-error" class="popup__error">
+        </span>
 
-        <input 
-         id="input-about"
-         type="text"
-         placeholder="О себе"
-         name="inputAbout"
-         class="popup__input popup__input_type_about"
-         minlength="2"
-         maxlength="200"
-         required>
-         <span id="input-about-error" class="popup__error">          
+        <input id="input-about" type="text" placeholder="О себе" name="inputAbout"
+          class="popup__input popup__input_type_about" minlength="2" maxlength="200" required>
+        <span id="input-about-error" class="popup__error">
         </span>
         <button class="popup__button-save" type="submit">Сохранить</button>
       </form>
     </div>
-  </div> 
+  </div>
   <div class="popup popup_type_new-card">
     <div class="popup__content">
       <h2 class="popup__title">Новое место</h2>
       <button class="popup__button-close popup__button-close_card" type="button"></button>
 
       <form class="popup__form" name="Popupform" id="form-card" novalidate>
-        <input 
-         id="input-place"
-         type="text"
-         placeholder="Название"
-         name="inputName"
-         class="popup__input popup__input_type_place"
-         minlength="1"
-         maxlength="30"
-         required>
-         <span id="input-place-error" class="popup__error">          
+        <input id="input-place" type="text" placeholder="Название" name="inputName"
+          class="popup__input popup__input_type_place" minlength="2" maxlength="30" required>
+        <span id="input-place-error" class="popup__error">
         </span>
 
-        <input 
-         id="input-link"
-         type="url"
-         placeholder="Ссылка на картинку"
-         name="inputLink"
-         class="popup__input popup__input_type_link"
-         required>
-         <span id="input-link-error" class="popup__error">          
+        <input id="input-link" type="url" placeholder="Ссылка на картинку" name="inputLink"
+          class="popup__input popup__input_type_link" required>
+        <span id="input-link-error" class="popup__error">
         </span>
         <button class="popup__button-save" type="submit">Создать</button>
       </form>
@@ -119,7 +93,7 @@
   </template>
   <script src="./scripts/cards.js"></script>
   <script type="module" src="./scripts/index.js"></script>
- <!-- <script src="./scripts/validate.js"></script> -->
+  <!-- <script src="./scripts/validate.js"></script> -->
 </body>
 
 </html>
