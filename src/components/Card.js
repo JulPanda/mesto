@@ -6,7 +6,7 @@ class Card {
     this._zoomCardToClick = zoomCardToClick;    
 
     this._removeCard = this._removeCard.bind(this);
-    this._likeCard = this._likeCard.bind(this);    
+    this._likeCard = this._likeCard.bind(this);        
   }
 
   _getElementTemplate() {
