@@ -3,10 +3,10 @@ class Card {
     this._template = template;
     this._name = data.name;
     this._link = data.link;
-    this._zoomCardToClick = zoomCardToClick;    
+    this._zoomCardToClick = zoomCardToClick;
 
     this._removeCard = this._removeCard.bind(this);
-    this._likeCard = this._likeCard.bind(this);        
+    this._likeCard = this._likeCard.bind(this);
   }
 
   _getElementTemplate() {

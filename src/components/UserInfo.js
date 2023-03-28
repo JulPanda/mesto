@@ -13,6 +13,6 @@ export default class UserInfo {
 
   setUserInfo(dataSet) {
     this._ProfileName.textContent = dataSet.inputName;
-    this._ProfileJob.textContent = dataSet.inputAbout;    
+    this._ProfileJob.textContent = dataSet.inputAbout;
   }
 }
