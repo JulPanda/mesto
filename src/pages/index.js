@@ -34,10 +34,29 @@ const userInfo = new UserInfo({
 
 
 //Валидация форм
-const validatorProfileForm = new FormValidator(formProfileElement, formValidation);
-const validatorCardForm = new FormValidator(formCardElement, formValidation);
-validatorProfileForm.enableValidation();
-validatorCardForm.enableValidation();
+//const validatorProfileForm = new FormValidator(formProfileElement, formValidation);
+//const validatorCardForm = new FormValidator(formCardElement, formValidation);
+//validatorProfileForm.enableValidation();
+//validatorCardForm.enableValidation();
+
+const formValidators = {}
+
+// Включение валидации
+const enableValidation = (config) => {
+  const formList = Array.from(document.querySelectorAll(config.formSelector))
+  formList.forEach((formElement) => {
+    const validator = new FormValidator(formElement, config)
+    // получаем данные из атрибута `name` у формы
+    const formName = formElement.getAttribute('name')
+
+    // вот тут в объект записываем под именем формы
+    formValidators[formName] = validator;
+    validator.enableValidation();
+  });
+};
+
+enableValidation(formValidation);
+
 
 
 // Функция вызова zoom-картинки
@@ -47,16 +66,19 @@ function zoomCardToClick(name, link) {
 
 // Открытие попапа профиля
 function openPopupEdit() {
-  nameInput.value = userInfo.getUserInfo().name;
-  jobInput.value = userInfo.getUserInfo().about;
+  const { name, about } = userInfo.getUserInfo();
+  nameInput.value = name;
+  jobInput.value = about;
   aboutPopupEdit.openPopup();
-  validatorProfileForm.resetFormValidation();
+  formValidators['Popupname'].resetFormValidation();
+  //validatorProfileForm.resetFormValidation();
 }
 
 // Окрытие попапа карточки
 function openPopupCard() {
   aboutPopupCard.openPopup();
-  validatorCardForm.resetFormValidation();
+  formValidators['Popupcard'].resetFormValidation();
+  //validatorCardForm.resetFormValidation();
 }
 
 //Функция создания карточки
@@ -78,14 +100,13 @@ const cardsList = new Section({
 cardsList.renderCards();
 
 //Добавление новой карточки через форму
-function handleCardFormSubmit(evt) {
+function handleCardFormSubmit(dataCard) {
   const newCard = createCard({
-    name: placeInput.value,
-    link: imagelinkInput.value
+    name: dataCard.inputPlace,
+    link: dataCard.inputLink
   });
   cardsList.addCards(newCard);
   aboutPopupCard.closePopup();
-  formCardElement.reset();
 }
 
 function handleProfileFormSubmit(dataSet) {
