@@ -129,6 +129,7 @@ function likeCardClick(card) {
 
 //Добавление новой карточки через форму
 function handleCardFormSubmit(dataCard) {
+  aboutPopupCard.setLoading(true);
   api.addCardsOut({
     name: dataCard.inputPlace,
     link: dataCard.inputLink
@@ -139,6 +140,9 @@ function handleCardFormSubmit(dataCard) {
     })
     .catch((err) => {
       console.log(err);
+    })
+    .finally(() => {
+      aboutPopupCard.setLoading(false);
     });
 }
 

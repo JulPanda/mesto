@@ -8,12 +8,12 @@ export default class Section {
 
   // Добавление карточек на страницу
   addCards(card) {
-    this._container.prepend(card);
+    this._container.append(card);
   }
 
   // Рендер карточек
   renderCards(items) {
-    items.reverse().forEach((item) => {
+    items.forEach((item) => {
       this._renderer(item);
     });
   }

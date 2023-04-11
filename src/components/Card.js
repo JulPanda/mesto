@@ -35,6 +35,7 @@ class Card {
   // Функция удаления карточки
   removeCard() {
     this._element.remove();
+    this._element = null;
   }
 
 
