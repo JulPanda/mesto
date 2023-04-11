@@ -129,7 +129,7 @@ function likeCardClick(card) {
 
 //Добавление новой карточки через форму
 function handleCardFormSubmit(dataCard) {
-  aboutPopupCard.setLoading(true);
+  aboutPopupCard.setLoading(`Создание...`);
   api.addCardsOut({
     name: dataCard.inputPlace,
     link: dataCard.inputLink
@@ -142,7 +142,7 @@ function handleCardFormSubmit(dataCard) {
       console.log(err);
     })
     .finally(() => {
-      aboutPopupCard.setLoading(false);
+      aboutPopupCard.setLoading(`Создать`);
     });
 }
 
@@ -161,7 +161,7 @@ Promise.all([api.getCurrentUser(), api.getUserCards()])
 
 
 function handleProfileFormSubmit(dataSet) {
-  aboutPopupEdit.setLoading(true);
+  aboutPopupEdit.setLoading(`Сохранение...`);
   api.
     changeUserInfo({ name: dataSet.inputName, about: dataSet.inputAbout })
     .then((res) => {
@@ -172,7 +172,7 @@ function handleProfileFormSubmit(dataSet) {
       console.log(err);
     })
     .finally(() => {
-      aboutPopupEdit.setLoading(false);
+      aboutPopupEdit.setLoading(`Сохранить`);
     });
 }
 
@@ -184,7 +184,7 @@ function deleteCardClick(card) {
 
 //Удаление картинки с подтверждением
 function handleDeleteCard(card) {
-  aboutPopupConfirm.setLoading(true);
+  aboutPopupConfirm.setLoading(`Удаление...`);
   console.log(card.getIdCard());
   api.deleteCard(card.getIdCard())
     .then(() => {
@@ -195,7 +195,7 @@ function handleDeleteCard(card) {
       console.log(err);
     })
     .finally(() => {
-      aboutPopupConfirm.setLoading(false);
+      aboutPopupConfirm.setLoading(`Да`);
     });
 }
 
@@ -206,7 +206,7 @@ function openPopupAvatar() {
 }
 
 function handleAvatarFormSubmit(data) {
-  aboutPopupAvatar.setLoading(true);
+  aboutPopupAvatar.setLoading(`Сохранение...`);
   api.
     changeUserAvatar({ avatar: data.inputAvatarLink })
     .then((res) => {
@@ -218,7 +218,7 @@ function handleAvatarFormSubmit(data) {
       console.log(err);
     })
     .finally(() => {
-      aboutPopupAvatar.setLoading(false);
+      aboutPopupAvatar.setLoading(`Сохранить`);
     });
 }
 

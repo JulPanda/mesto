@@ -8,7 +8,7 @@ export default class Section {
 
   // Добавление карточек на страницу
   addCards(card) {
-    this._container.append(card);
+    this._container.prepend(card);
   }
 
   // Рендер карточек

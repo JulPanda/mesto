@@ -6,8 +6,6 @@ export default class PopupWithConfirm extends Popup {
     this._handleFormSubmit = handleFormSubmit;
     this._form = this.popup.querySelector('.popup__form');
     this._btnConfirm = this._form.querySelector('.popup__button-save');
-    this._btnConfirmText = `Да`
-
   }
 
   setEventListeners() {
@@ -24,12 +22,8 @@ export default class PopupWithConfirm extends Popup {
     this._card = card;
   }
 
-  setLoading(isLoad, loadingMessage = `Удаление...`) {
-    if (isLoad) {
-      this._btnConfirm.textContent = loadingMessage;
-    } else {
-      this._btnConfirm.textContent = this._btnConfirmText;
-    }
+  setLoading(loadingMessage) {
+    this._btnConfirm.textContent = loadingMessage;    
   }
 
 }
