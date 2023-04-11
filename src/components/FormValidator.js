@@ -18,7 +18,7 @@ class FormValidator {
   };
 
 
-  enableValidation() {    
+  enableValidation() {
     this._inputs.forEach((form) => {
       form.addEventListener('submit', this.disableSubmit);
       form.addEventListener('input', () => {

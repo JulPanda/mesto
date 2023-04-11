@@ -16,6 +16,8 @@
   <main class="page__content">
     <section class="profile">
       <img class="profile__image" alt="Фото Жак-Ив Кусто" src="<%=require('./images/image-profile.jpg')%>">
+      <div class="profile__image-edit"></div>
+
       <div class="profile__info">
         <h1 class="profile__title">Жак-Ив Кусто</h1>
         <button class="profile__button-edit" type="button" aria-label="Кнопка Редактировать">
@@ -81,13 +83,43 @@
       <h3 class="popup__title-image"></h3>
     </div>
   </div>
+
+  <div class="popup popup_type_confirm">
+    <div class="popup__content popup__content-confirm">
+      <h2 class="popup__title">Вы уверены?</h2>
+      <button class="popup__button-close popup__button-close_confirm" type="button"></button>
+      <form class="popup__form" name="Popupconfirm" id="form-confirm">
+        <button class="popup__button-save popup__button-confirm" type="submit">Да</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup popup_type_avatar">
+    <div class="popup__content">
+      <h2 class="popup__title">Обновить аватар</h2>
+      <button class="popup__button-close" type="button"></button>
+
+      <form class="popup__form" name="PopupAvatar" id="form-avatar" novalidate>
+        <input id="input-avatar" type="url" placeholder="Ссылка на аватар" name="inputAvatarLink"
+          class="popup__input popup__input_type_avatar" required>
+        <span id="input-avatar-error" class="popup__error">
+        </span>
+        <button class="popup__button-save" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+
   <template class="element-template">
     <li class="element">
       <img class="element__image" src="#" alt="">
       <button class="element__button-delete" type="button" aria-label="Корзина"></button>
       <div class="element__text-block">
         <h2 class="element__title"></h2>
-        <button class="element__button-like" type="button" aria-label="Лайк"></button>
+        <div>
+          <button class="element__button-like" type="button" aria-label="Лайк"></button>
+          <p class="element__like-counter"></p>
+        </div>
+
       </div>
     </li>
   </template>

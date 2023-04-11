@@ -1,0 +1,14 @@
+.profile__image-edit {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-position: center;
+  background-repeat: no-repeat;  
+
+}
+
+.profile__image-edit:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, .8);
+  background-image: url(../../../images/Vector.png);
+}

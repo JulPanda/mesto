@@ -1,35 +1,37 @@
 
 // Исходные данные: массив для создания карточек
-export const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
+//export const initialCards = [
+//  {
+//    name: 'Архыз',
+//    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+//  },
+//  {
+//    name: 'Челябинская область',
+//    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+//  },
+//  {
+//    name: 'Иваново',
+//    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+//  },
+//  {
+//    name: 'Камчатка',
+//    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+//  },
+//  {
+//    name: 'Холмогорский район',
+//    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+//  },
+//  {
+//    name: 'Байкал',
+//    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+//  }
+//];
+
 
 //Кнопки редактирования профиля и добавление новых карточек
 export const aboutOpenButtonEdit = document.querySelector('.profile__button-edit');
 export const aboutOpenButtonCard = document.querySelector('.profile__button-add');
+export const aboutOpenButtonAvatar = document.querySelector('.profile__image-edit');
 
 // Секция карточек
 export const cardsListSelector = '.cards';
@@ -42,6 +44,7 @@ export const nameInput = formProfileElement.querySelector('.popup__input_type_na
 export const jobInput = formProfileElement.querySelector('.popup__input_type_about');
 export const imagelinkInput = formCardElement.querySelector('.popup__input_type_link');
 export const placeInput = formCardElement.querySelector('.popup__input_type_place');
+export const avatarInput = document.querySelector('#input-avatar');
 
 export const formValidation = {
   formSelector: '.popup__form',
