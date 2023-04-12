@@ -143,6 +143,7 @@ function handleCardFormSubmit(dataCard) {
     })
     .finally(() => {
       aboutPopupCard.setLoading(`Создать`);
+      //aboutPopupCard.closePopup();
     });
 }
 
@@ -173,6 +174,7 @@ function handleProfileFormSubmit(dataSet) {
     })
     .finally(() => {
       aboutPopupEdit.setLoading(`Сохранить`);
+      //aboutPopupEdit.closePopup();
     });
 }
 
@@ -196,6 +198,7 @@ function handleDeleteCard(card) {
     })
     .finally(() => {
       aboutPopupConfirm.setLoading(`Да`);
+      //aboutPopupConfirm.closePopup();
     });
 }
 
@@ -219,6 +222,7 @@ function handleAvatarFormSubmit(data) {
     })
     .finally(() => {
       aboutPopupAvatar.setLoading(`Сохранить`);
+      //aboutPopupAvatar.closePopup();
     });
 }
 
